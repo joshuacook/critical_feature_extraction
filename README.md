@@ -6,5 +6,4 @@
 
 ## Trading Signal
 
-![](doc/img/trading_signal.png)
 
