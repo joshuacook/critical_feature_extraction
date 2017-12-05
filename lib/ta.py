@@ -5,8 +5,7 @@ import math as m
 
 #Moving Average
 def MA(df, n):
-    MA = df['Close'].rolling(window=n,center=False).mean()
-    MA = pd.Series(MA, name='MA_' + str(n))
+    MA = pd.Series(pd.rolling_mean(df['Close'], n), name = 'MA_' + str(n))
     df = df.join(MA)
     return df
 
