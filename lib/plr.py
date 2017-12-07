@@ -115,8 +115,9 @@ def PLR(arr, epsilon):
     lines, points = plr_recursive(arr, (0, len(arr) -1), epsilon)
 
     if type(lines) != list:
-        return lines(xx)
+        plr_values = lines(xx)
+        
     else:
         plr_values = np.piecewise(xx, [xx >= point for point in points], lines)
 
-        return plr_values, lines, points
+    return plr_values, lines, points
