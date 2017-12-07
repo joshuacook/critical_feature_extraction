@@ -25,7 +25,7 @@ def line_point_distance(arr, x1, x2, x0):
     (x1, arr[x1]) and (x2, arr[x2]) to a third point (x0, arr[x0])
 
     Distance formula from https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line.
-    
+
     Inputs:
     - arr: numpy 1d-array of time-series values
     - x1: int, start x-value of line
