@@ -100,7 +100,7 @@ def plr_recursive(arr, span_tuple, epsilon):
         line = connect_line(arr, (int(first), int(last)))
         point = first
 
-        return line, point
+        return [line], [point]
 
     else: #recursive case
 
