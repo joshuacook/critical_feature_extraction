@@ -10,7 +10,14 @@ def connect_line(arr, span_tuple):
     - arr: numpy 1d-array of time-series values
     - span_tuple: start and enpdpoints for line
     '''
+
+    if not all(map(lambda x: isinstance(x, int), span_tuple)):
+        raise ValueError('span_tuple must contain all ints')
+
     first, last = span_tuple
+    if not (last > first > 0):
+        raise ValueError('last should be greater than first should be greater than 0')
+
     run = last - first
     rise = arr[last] - arr[first]
     slope = rise / run
@@ -116,7 +123,7 @@ def PLR(arr, epsilon):
 
     if type(lines) != list:
         plr_values = lines(xx)
-        
+
     else:
         plr_values = np.piecewise(xx, [xx >= point for point in points], lines)
 
