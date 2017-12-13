@@ -118,7 +118,7 @@ def PLR(arr, epsilon):
     '''
     Compute full PLR for a time series
     '''
-    xx = np.arange(len(arr))
+    xx = np.arange(len(arr), dtype = float)
     lines, points = plr_recursive(arr, (0, len(arr) -1), epsilon)
 
     if type(lines) != list:
