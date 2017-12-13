@@ -11,12 +11,12 @@ def connect_line(arr, span_tuple):
     - span_tuple: start and enpdpoints for line
     '''
 
-    if not all(map(lambda x: isinstance(x, int), span_tuple)):
-        raise ValueError('span_tuple must contain all ints')
+    # if not all(map(lambda x: isinstance(x, int), span_tuple)):
+    #     raise ValueError('span_tuple must contain all ints')
 
     first, last = span_tuple
-    if not (last > first > 0):
-        raise ValueError('last should be greater than first should be greater than 0')
+    # if not (last > first > 0):
+    #     raise ValueError('last should be greater than first should be greater than 0')
 
     run = last - first
     rise = arr[last] - arr[first]
@@ -97,7 +97,7 @@ def plr_recursive(arr, span_tuple, epsilon):
     points = []
 
     if distance < epsilon: #base case
-        line = connect_line(arr, span_tuple)
+        line = connect_line(arr, (int(first), int(last)))
         point = first
 
         return line, point
